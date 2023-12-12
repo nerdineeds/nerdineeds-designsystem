@@ -40,7 +40,7 @@ export const FAQ: React.FC<FAQProps> = ({
               <p className="text-base text-gray-400">
                 <span>{tagline}</span>
                 <a
-                  className="inline-block text-black hover:underline"
+                  className="inline-block text-black hover:underline dark:text-white"
                   href={`mailto:${email}`}
                 >
                   {email}
@@ -52,7 +52,10 @@ export const FAQ: React.FC<FAQProps> = ({
             <div className="lg:ml-auto mw-3xl">
               {/* <!--Question 2--> */}
               {facts.map((fact, index) => (
-                <div key={index} className="py-6 px-0 border-t border-black">
+                <div
+                  key={index}
+                  className="py-6 px-0 border-t border-black dark:border-white"
+                >
                   <div className="flex w-full justify-between items-center">
                     <h5 className="text-lg xs:text-2xl tracking-tight">
                       {fact.question}
@@ -60,7 +63,7 @@ export const FAQ: React.FC<FAQProps> = ({
                     {isDrawerOpen ? (
                       <button
                         onClick={toggleDrawer}
-                        className="flex-shrink-0 inline-flex ml-4 items-center justify-center w-9 h-9 text-black hover:text-white border border-black hover:bg-black rounded-full transition duration-150"
+                        className="lex-shrink-0 inline-flex ml-4 items-center justify-center w-9 h-9 text-black hover:text-white border border-black hover:bg-black dark:text-white dark:border-white dark:hover:bg-white rounded-full dark:hover:text-black transition duration-150"
                       >
                         <svg
                           width="18"
@@ -90,7 +93,7 @@ export const FAQ: React.FC<FAQProps> = ({
                     ) : (
                       <button
                         onClick={toggleDrawer}
-                        className="flex-shrink-0 inline-flex ml-4 items-center justify-center w-9 h-9 text-black hover:text-white border border-black hover:bg-black rounded-full transition duration-150"
+                        className="flex-shrink-0 inline-flex ml-4 items-center justify-center w-9 h-9 text-black hover:text-white border border-black hover:bg-black dark:text-white dark:border-white dark:hover:bg-white rounded-full dark:hover:text-black transition duration-150 "
                       >
                         <svg
                           width="18"
