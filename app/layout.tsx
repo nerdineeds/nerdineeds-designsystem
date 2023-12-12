@@ -4,6 +4,7 @@ import './globals.css'
 import { TopBanner } from "../stories/TopBanner/TopBanner";
 import React from "react";
 import { BorderNav } from "../stories/Navigation/BorderNavigation/BorderNav";
+import { ThemeProvider } from "./theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,17 +20,23 @@ const NavLinks = [
   { name: "book your project", label: "connect", href: "/connect" },
 ];
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <TopBanner
-          label={"NOW BOOKING PROJECTS FOR Q1 OF 2024"}
-          theme="primary"
-          link="/connect"
-        />
-        <BorderNav links={NavLinks} />
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <TopBanner
+            label={"NOW BOOKING PROJECTS FOR Q1 OF 2024"}
+            theme="primary"
+            link="/connect"
+          />
+          <BorderNav links={NavLinks} />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
