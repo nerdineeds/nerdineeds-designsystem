@@ -1,0 +1,16 @@
+/* In your global stylesheet, e.g., styles.css */
+@keyframes marquee {
+    from {
+        transform: translate3d(var(--marquee-start), 0, 0);
+    }
+
+    to {
+        transform: translate3d(var(--marquee-end), 0, 0);
+    }
+}
+
+.marquee {
+    --marquee-start: 0%;
+    --marquee-end: -100%;
+    animation: marquee 15s linear infinite;
+}
