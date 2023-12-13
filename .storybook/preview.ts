@@ -1,4 +1,4 @@
-import type { Preview } from "@storybook/react";
+import type { Preview, ReactRenderer } from "@storybook/react";
 import "../app/globals.css";
 import { withThemeByClassName } from "@storybook/addon-themes";
 
@@ -12,11 +12,9 @@ const preview: Preview = {
       },
     },
   },
-
   decorators: [
-    withThemeByClassName({
+    withThemeByClassName<ReactRenderer>({
       themes: {
-        // nameOfTheme: 'classNameForTheme',
         light: "",
         dark: "dark",
       },
